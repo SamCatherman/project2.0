@@ -1,0 +1,7 @@
+<h1><%= @farm.name %></h1>
+<h2><%= link_to "All Farms", farms_path %></h2>
+
+<h2>specialty: <%= @farm.specialty %></h2>
+<%= link_to "Edit #{@farm.name}", edit_farm_path(@farm) %>
+<%= link_to "Remove #{@farm.name}", farm_path(@farm),
+  method: :delete, data: {confirm: "Remove this farm?"} %>
