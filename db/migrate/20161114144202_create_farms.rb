@@ -4,6 +4,7 @@ class CreateFarms < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :location
       t.string :specialty
+      t.string :img_url
       t.timestamps
     end
   end
