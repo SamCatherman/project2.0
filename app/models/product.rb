@@ -1,4 +1,4 @@
 class Product < ApplicationRecord
-  belongs_to :farm
-  has_many :markets
+  has_many :farms
+  has_many :products, through: :markets
 end
