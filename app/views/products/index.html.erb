@@ -1,6 +1,7 @@
 <h2>Products</h2>
 <% @products.each do |product| %>
 <ul>
-<li><%= link_to product.product_name, product_path(product) %></li>
+<li><%= link_to product.product_name, farm_products_path(product) %></li>
 </ul>
 <% end %>
+<%= link_to "(+)", new_farm_product_path %>

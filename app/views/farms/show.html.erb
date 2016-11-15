@@ -1,8 +1,9 @@
 <h1><%= @farm.name %></h1>
 <h2><%= link_to "All Farms", farms_path %></h2>
 
+<p>Location: <%= @farm.location %></p>
 <p>Specialty: <%= @farm.specialty %></p>
-<h2>Products for sale: </h2>
+<h2><%= link_to "Products for sale", farm_products_path(@farm) %></h2>
 
 <div>
   <img src="<%= @farm.img_url%>" >

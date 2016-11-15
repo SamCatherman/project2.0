@@ -1,0 +1,9 @@
+<h2>Product Info:</h2>
+<p>Name: <%= @product.product_name %></p>
+<p>Quality: <%= @product.quality %></p>
+<p>Weight: <%= @product.weight %></p>
+<p>Price: <%= @product.price %></p>
+
+<%= link_to "Edit #{@product.product_name}", edit_farm_product_path(@product) %>
+<%= link_to "Remove #{@product.product_name}", farm_product_path(@product),
+  method: :delete, data: {confirm: "Remove this product?"} %>

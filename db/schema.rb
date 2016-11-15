@@ -36,8 +36,11 @@ ActiveRecord::Schema.define(version: 20161114144257) do
     t.string   "quality"
     t.integer  "weight"
     t.integer  "price"
+    t.integer  "farm_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.index ["farm_id"], name: "index_products_on_farm_id", using: :btree
   end
 
+  add_foreign_key "products", "farms"
 end

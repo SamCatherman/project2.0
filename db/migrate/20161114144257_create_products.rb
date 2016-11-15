@@ -5,6 +5,7 @@ class CreateProducts < ActiveRecord::Migration[5.0]
       t.string :quality
       t.integer :weight
       t.integer :price
+      t.references :farm, index: true, foreign_key: true
       t.timestamps
     end
   end
