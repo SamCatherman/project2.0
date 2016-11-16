@@ -4,14 +4,12 @@ class ProductsController < ApplicationController
   end
 
   def new
-    @farm = Farm.find(params[:farm_id])
-    @product = @farm.products.new
+    @product = Product.new
   end
 
   def create
-    @farm = Farm.find(params[:farm_id])
-    @product = @farm.products.create(product_params)
-    redirect_to @product
+    @product = Product.create(product_params)
+    redirect_to products_path
   end
 
   def show
@@ -19,7 +17,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @farm = Farm.find(params[:farm_id])
+    # @farm = Farm.find(params[:farm_id])
     @product = Product.find(params[:id])
   end
 

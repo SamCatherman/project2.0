@@ -3,7 +3,7 @@
 
 <p>Location: <%= @farm.location %></p>
 <p>Specialty: <%= @farm.specialty %></p>
-<h2><%= link_to "Products for sale", farm_products_path(@farm) %></h2>
+<h2><%= link_to "Products for sale", products_path(@farm) %></h2>
 
 <div>
   <img src="<%= @farm.img_url%>" >
