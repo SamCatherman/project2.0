@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class MarketTest < ActiveSupport::TestCase
+class HarvestTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

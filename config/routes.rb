@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   root to: 'farms#index'
   resources :farms
   resources :products
-  resources :markets
+  resources :harvests
 end

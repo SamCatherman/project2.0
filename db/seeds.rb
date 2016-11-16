@@ -17,6 +17,8 @@ sams_farm = Farm.create(name:"Sam's Farm", location: "Washington, DC", specialty
 # tjs = Market.create(name:"Trader Joe's", location:"New York City")
 # mt_p = Market.create(name:"Mount Pleasant Farmer's Market", location:"Washington, DC")
 
+tomatoes = Harvest.create(date:"4/5/16")
+
 cheese = Product.create(product_name: "Cheese", quality: "organic", weight: 200, price: 2)
 drumsticks = Product.create(product_name: "Chicken Legs", quality: "hormone-free", weight: 500, price: 3)
 tomatoes = Product.create(product_name: "Tomatoes", quality: "organic", weight: 250, price: 3)
