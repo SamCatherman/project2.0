@@ -1,0 +1,15 @@
+<%= form_for @order do |f| %>
+
+    <%= f.label :farm_id %><br>
+    <%= f.collection_select :farm_id, Farm.all, :id, :name %>
+
+    <%= f.label :product_id %><br>
+    <%= f.collection_select :product_id, Product.all, :id, :name %>
+
+    <%= f.label :price %>
+    <%= f.text_field :price %>
+
+
+  <%= f.submit %>
+
+<% end %>

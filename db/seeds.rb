@@ -22,5 +22,6 @@ cheese = Product.create(name: "20lb Cheese", quality: "organic")
 drumsticks = Product.create(name: "50lb Chicken Legs", quality: "hormone-free")
 tomatoes = Product.create(name: "100lb Tomatoes", quality: "organic")
 
+order_one = Order.create(price: 20)
 
 puts "seeding finished"

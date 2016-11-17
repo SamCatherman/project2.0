@@ -3,7 +3,7 @@ class CreateOrders < ActiveRecord::Migration[5.0]
     create_table :orders do |t|
       t.belongs_to :product
         t.belongs_to :farm
-        t.decimal :price, precision: 2, scale: 2
+        t.decimal :price, precision: 8, scale: 2
         t.timestamps null: false
     end
   end

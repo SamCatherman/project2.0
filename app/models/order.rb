@@ -3,5 +3,5 @@ class Order < ApplicationRecord
   belongs_to :product
   validates :price, presence: true
   validates :farm_id, presence: true
-  validates :item_id, presence: true
+  validates :product_id, presence: true
 end

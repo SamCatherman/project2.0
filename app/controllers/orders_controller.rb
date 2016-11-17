@@ -8,22 +8,24 @@ class OrdersController < ApplicationController
   end
 
   def new
-    @farms = Farm.all
-    @products = Product.all
     @order = Order.new
   end
 
   def edit
-    @farms = Farm.all
-    @products = Product.all
     @order = Order.find(params[:id])
+    @product = @order.product.name
+    @farms = Farm.all.map do |farm|
+      [farm.name, farm.id]
+    end
   end
 
   def create
-    @farms = Farm.all
-    @products = Product.all
     @order = Order.new(order_params)
-    redirect_to @order
+    if @order.save
+      redirect_to orders_path(@order)
+    else
+      render 'new'
+    end
   end
 
   def update
