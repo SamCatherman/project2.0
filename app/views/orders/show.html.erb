@@ -1,10 +1,11 @@
-<p>
-  Farm: <%= @order.inspect %>
-</p>
+<h3>Order</h3>
 
-<p>Product: <%= @order.farm_id %></p>
-<%= link_to "Show", order_path(order)%>
-<%= link_to "Edit", edit_order_path(order)%>
-<%= link_to "Remove", order_path(order),
+<p>Farm: <%= @order.farm.name %></p>
+<p>Product: <%= @order.product.name%></p>
+<p>Quality: <%= @order.product.quality%></p>
+<p>Price ($): <%= @order.price %></p>
+<%= link_to 'edit', edit_order_path(@order)%>
+
+<%= link_to "Remove", order_path,
           method: :delete, data: {confirm: "Remove this order?"}%>
 <%= link_to "Orders", orders_path %>

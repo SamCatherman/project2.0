@@ -1,15 +1,12 @@
-
+<h3>All Orders: </h3>
 
 <% @orders.each do |order| %>
 <h4>Order:</h4>
-  <p>Farm: <%= order.farm.name %></p>
-  <p>Item: <%= order.product.name%></p>
-  <p>Item Description: <%= order.product.quality%></p>
-  <p>Order Price: <%= order.price %></p>
-  <%= link_to 'Show', order_path(order)%>
-  <%= link_to 'edit', edit_order_path(order)%>
-  <%= link_to 'destroy', order_path(order), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= link_to "View order from #{order.farm.name}", order_path(order)%>
+
+  <p>Price: <%= order.price %></p>
+  <%= link_to 'Remove', order_path(order), method: :delete, data: { confirm: 'Are you sure?' } %>
 
 <% end %>
 <br>
-<%= link_to "(+)", new_order_path %> | <%= link_to "home", root_path %>
+<%= link_to "(+)", new_order_path %>

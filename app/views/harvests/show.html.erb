@@ -1,0 +1,13 @@
+<h3>Date: <%= @harvest.date %></h3>
+<ul>
+  <li>Products: <%= @harvest.product.product_name  %></li>
+  <li>Produced by: <%= @harvest.farm.name %></li>
+  <li>Quality: <%= @harvest.product.quality %> </li>
+  <li>Weight (lb): <%= @harvest.product.weight %></li>
+  <li>Price ($/lb): <%= @harvest.product.price %></li>
+</ul>
+
+<%= link_to "edit Harvest", edit_harvest_path %>
+<%= link_to "remove Harvest", harvest_path(@harvest),
+  method: :delete, data: {confirm: "Remove this harvest?"} %>
+<%= link_to "return to farms", farms_path %>
