@@ -4,7 +4,7 @@
 <h4>Order:</h4>
   <%= link_to "View order from #{order.farm.name}", order_path(order)%>
 
-  <p>Price: <%= order.price %></p>
+  <p>Price: $<%= order.price %></p>
   <%= link_to 'Remove', order_path(order), method: :delete, data: { confirm: 'Are you sure?' } %>
 
 <% end %>
