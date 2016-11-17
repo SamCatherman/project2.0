@@ -17,7 +17,7 @@ class HarvestsController < ApplicationController
 
   def create
     Harvest.create!(harvest_params)
-    redirect_to harvests_path
+    redirect_to asset_path(@farm)
   end
 
   def edit

@@ -1,14 +1,18 @@
 <h1><%= @farm.name %></h1>
 <h2><%= link_to "All Farms", farms_path %></h2>
-
-<p>Location: <%= @farm.location %></p>
-<p>Specialty: <%= @farm.specialty %></p>
-<h2><%= link_to "View this farm's harvests", harvests_path(@farm) %></h2>
-
+<div class="farm_info">
+  <p>Location: <%= @farm.location %></p>
+  <p>Specialty: <%= @farm.specialty %></p>
+  <p><%= link_to "Add harvest", new_farm_harvest_path(@farm) %></p>
+</div>
 <div>
   <img src="<%= @farm.img_url%>" >
 </div>
 
-<%= link_to "Edit #{@farm.name}", edit_farm_path(@farm) %>
-<%= link_to "Remove #{@farm.name}", farm_path(@farm),
-  method: :delete, data: {confirm: "Remove this farm?"} %>
+<nav>
+  <ul>
+    <li>  <%= link_to "Edit #{@farm.name}", edit_farm_path(@farm) %></li>
+    <li>  <%= link_to "Remove #{@farm.name}", farm_path(@farm),
+        method: :delete, data: {confirm: "Remove this farm?"} %></li>
+  </ul>
+</nav>

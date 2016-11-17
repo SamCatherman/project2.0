@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 20161116011418) do
 
   create_table "harvests", force: :cascade do |t|
     t.string   "date"
+    t.integer  "weight",     null: false
+    t.integer  "price",      null: false
     t.integer  "farm_id"
     t.integer  "product_id"
     t.datetime "created_at", null: false
@@ -37,8 +39,7 @@ ActiveRecord::Schema.define(version: 20161116011418) do
   create_table "products", force: :cascade do |t|
     t.string   "product_name"
     t.string   "quality"
-    t.integer  "weight",       null: false
-    t.integer  "price",        null: false
+    t.string   "img_url"
     t.integer  "farm_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
