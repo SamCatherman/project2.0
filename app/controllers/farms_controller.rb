@@ -13,8 +13,8 @@ class FarmsController < ApplicationController
   end
 
   def create
-    Farm.create(farm_params)
-    redirect_to farms_path
+    @farm = Farm.create(farm_params)
+    redirect_to @farm
   end
 
   def edit
@@ -24,7 +24,11 @@ class FarmsController < ApplicationController
   def update
     @farm = Farm.find(params[:id])
     @farm.update(farm_params)
-    redirect_to farm_path(@farm)
+
+    # else
+    #   flash[:alert] = "Only the user can edit"
+    # end
+    redirect_to @farm
   end
 
   def destroy
@@ -36,6 +40,6 @@ class FarmsController < ApplicationController
   private
 
   def farm_params
-    params.require(:farm).permit(:name, :location, :specialty, :img_url)
+    params.require(:farm).permit(:name, :location)
   end
 end

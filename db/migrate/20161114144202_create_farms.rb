@@ -3,9 +3,7 @@ class CreateFarms < ActiveRecord::Migration[5.0]
     create_table :farms do |t|
       t.string :name
       t.string :location
-      t.string :specialty
-      t.string :img_url
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end

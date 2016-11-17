@@ -1,3 +1,9 @@
 class Product < ApplicationRecord
-  belongs_to :farm, through: :harvests
+
+  has_many :orders, dependent: :destroy
+  has_many :farms, through: :orders
+
+  validates :name, uniqueness: true
+  validates :name, presence: true
+
 end

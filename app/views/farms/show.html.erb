@@ -2,11 +2,6 @@
 <h2><%= link_to "All Farms", farms_path %></h2>
 <div class="farm_info">
   <p>Location: <%= @farm.location %></p>
-  <p>Specialty: <%= @farm.specialty %></p>
-  <p><%= link_to "Add harvest", new_farm_harvest_path(@farm) %></p>
-</div>
-<div>
-  <img src="<%= @farm.img_url%>" >
 </div>
 
 <nav>
