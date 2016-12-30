@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20161117071533) do
   create_table "orders", force: :cascade do |t|
     t.integer  "product_id"
     t.integer  "farm_id"
-    t.decimal  "price",      precision: 8, scale: 2
+    t.decimal  "price",      precision: 5, scale: 2
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
     t.index ["farm_id"], name: "index_orders_on_farm_id", using: :btree
