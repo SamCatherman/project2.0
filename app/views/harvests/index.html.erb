@@ -1,8 +1,0 @@
-<h2>All Harvests</h2>
-<% @harvests.each do |harvest| %>
-<div>
-  <%= link_to harvest.date, harvest_path(harvest) %>
-</div>
-<% end %>
-<%= link_to "(+)", new_harvest_path %>
-<h4><%= link_to "All Farms", farms_path %></h4>

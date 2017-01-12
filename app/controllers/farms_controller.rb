@@ -13,9 +13,12 @@ class FarmsController < ApplicationController
   end
 
   def create
-    @farm = Farm.create(farm_params)
-    redirect_to @farm
-  end
+    # if !current_user
+      # flash[:alert] = "Please log in or sign up"
+    # else
+      @farm = Farm.create(farm_params)
+      redirect_to @farm
+    end
 
   def edit
     @farm = Farm.find(params[:id])
@@ -24,10 +27,6 @@ class FarmsController < ApplicationController
   def update
     @farm = Farm.find(params[:id])
     @farm.update(farm_params)
-
-    # else
-    #   flash[:alert] = "Only the user can edit"
-    # end
     redirect_to @farm
   end
 

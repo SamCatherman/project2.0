@@ -3,7 +3,9 @@
   <head>
     <title>FarmersMarket</title>
     <%= csrf_meta_tags %>
-
+    <%= stylesheet_link_tag 'application',
+    'https://fonts.googleapis.com/css?family=Mandali',
+     media: 'all', 'data-turbolinks-track' => true %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -11,6 +13,7 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+  <header>
     <nav class="navigate">
       <% if !current_user %>
         <%= link_to "Sign Up", new_user_registration_path %>
@@ -20,11 +23,11 @@
         <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %> |
         <%= link_to "Home", root_path %> |
         <%= link_to "Add Farm", new_farm_path %> |
-        <%= link_to "Add Product", new_product_path %> |
+        <%= link_to "View Products", products_path %> |
         <%= link_to "Create Order", new_order_path %>
-
       <% end %>
     </nav>
+  </header>
     <%= yield %>
   </body>
 </html>
